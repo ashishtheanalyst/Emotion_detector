@@ -1,33 +1,30 @@
-:root{
-  --bg: #0f1221;
-  --card: #ffffff;
-  --soft: 18px;
-  --gradient: linear-gradient(135deg,#7c4dff 0%, #00e5ff 100%);
+:root {
+  --bg: #0a0f1c;
+  --gradient: linear-gradient(90deg, #6dd5ed, #2193b0);
 }
 
-*{ box-sizing: border-box; }
-body{
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f6f7fb;
   color: #111827;
+  margin: 0;
 }
+
+.card { border-radius: 16px; }
+.shadow-soft { box-shadow: 0 12px 40px rgba(17,24,39,.08); }
 
 /* Hero */
 .hero{
   position: relative;
-  min-height: 52vh;
+  min-height: 60vh;
   background: url('/static/img/hero-bg.jpg') center/cover no-repeat, var(--bg);
   color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 80px;
 }
-.hero-overlay{
-  position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(15,18,33,.35), rgba(15,18,33,.75));
-  pointer-events:none;
-}
-.hero-illustration{
-  max-height: 300px;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,.45));
-}
+.hero-overlay{ position:absolute; inset:0; background: rgba(0,0,0,.55); }
 .gradient-text{
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -35,55 +32,47 @@ body{
   color: transparent;
 }
 
-/* Cards */
-.shadow-soft{
-  box-shadow: 0 12px 40px rgba(17,24,39,.08);
-  border-radius: var(--soft);
-}
-.card{ border-radius: var(--soft); }
-
-/* Controls */
+/* Inputs */
 textarea.form-control{
-  border-radius: 14px;
-  padding: 12px 14px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  color:#111;
+  border-radius:12px;
+}
+textarea.form-control:focus{
+  box-shadow:0 0 0 2px #2563eb33;
+  border-color:#2563eb66;
 }
 .btn-primary{
   background-image: var(--gradient);
   border: none;
   border-radius: 12px;
-  box-shadow: 0 8px 18px rgba(124,77,255,.25);
+  box-shadow: 0 8px 18px rgba(33,147,176,.25);
 }
-.btn-primary:hover{ filter: brightness(1.03); }
+.btn-primary:hover{ filter:brightness(1.03); }
 
-/* Result box */
+/* 🔵 Colored result box (this replaces the dark/black box) */
 .result-box{
-  background: #0f1221;
-  color: #e5e7eb;
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 14px;
-  min-height: 88px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  line-height: 1.6;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid #90caf9;
+  background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+  color: #0b3a69;
+  font-size: 1.05rem;
+  font-weight: 600;
   white-space: pre-wrap;
-  word-break: break-word;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
-.placeholder-text{ color: #9ca3af; }
-
-/* Dominant pill */
-.bg-emo{
-  background-image: var(--gradient);
-  color: #0f1221;
-  padding: 8px 12px;
-  font-weight: 700;
+.result-box.updated{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(137,207,240,.25);
 }
+.placeholder-text{ color:#486581; }
 
-/* Emoji strip */
-.emo-ico{
-  width: 36px; height: 36px; object-fit: contain;
-  opacity: .95;
-  transition: transform .15s ease;
-}
-.emo-ico:hover{ transform: translateY(-2px) scale(1.04); }
-
-/* Small niceties */
-footer{ opacity: .7; }
+/* Dominant emotion badge colors */
+.badge-emo{ font-size:1.1rem; padding:.6rem 1rem; border-radius:50px; color:#fff; }
+.badge-anger   { background:#ef4444; }
+.badge-joy     { background:#facc15; color:#111; }
+.badge-sadness { background:#3b82f6; }
+.badge-fear    { background:#8b5cf6; }
+.badge-disgust { background:#22c55e; }
