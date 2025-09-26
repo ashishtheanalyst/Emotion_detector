@@ -1,0 +1,72 @@
+:root {
+  --bg: #0a0f1c;
+  --gradient: linear-gradient(90deg, #6dd5ed, #2193b0);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  background: url('/static/img/hero-bg.jpg') center/cover no-repeat, var(--bg);
+  color: #fff;
+  display: flex;
+  align-items: flex-end;  /* push content lower */
+  padding-bottom: 80px;   /* add breathing space */
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* overlay for readability */
+}
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card {
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 12px;
+}
+.card-body h2 {
+  color: #fff;
+}
+textarea.form-control {
+  background: #1f2937;
+  border: none;
+  color: #fff;
+  resize: none;
+}
+textarea.form-control:focus {
+  background: #1f2937;
+  color: #fff;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+.btn-primary {
+  background: var(--gradient);
+  border: none;
+}
+.result-box {
+  background: #1f2937;
+  min-height: 120px;
+  font-size: 0.95rem;
+}
+.placeholder-text {
+  color: #9ca3af;
+}
+.bg-emo {
+  background: var(--gradient);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}

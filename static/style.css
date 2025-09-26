@@ -1,0 +1,89 @@
+:root{
+  --bg: #0f1221;
+  --card: #ffffff;
+  --soft: 18px;
+  --gradient: linear-gradient(135deg,#7c4dff 0%, #00e5ff 100%);
+}
+
+*{ box-sizing: border-box; }
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: #f6f7fb;
+  color: #111827;
+}
+
+/* Hero */
+.hero{
+  position: relative;
+  min-height: 52vh;
+  background: url('/static/img/hero-bg.jpg') center/cover no-repeat, var(--bg);
+  color: #fff;
+}
+.hero-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(15,18,33,.35), rgba(15,18,33,.75));
+  pointer-events:none;
+}
+.hero-illustration{
+  max-height: 300px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,.45));
+}
+.gradient-text{
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Cards */
+.shadow-soft{
+  box-shadow: 0 12px 40px rgba(17,24,39,.08);
+  border-radius: var(--soft);
+}
+.card{ border-radius: var(--soft); }
+
+/* Controls */
+textarea.form-control{
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+.btn-primary{
+  background-image: var(--gradient);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(124,77,255,.25);
+}
+.btn-primary:hover{ filter: brightness(1.03); }
+
+/* Result box */
+.result-box{
+  background: #0f1221;
+  color: #e5e7eb;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  min-height: 88px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.placeholder-text{ color: #9ca3af; }
+
+/* Dominant pill */
+.bg-emo{
+  background-image: var(--gradient);
+  color: #0f1221;
+  padding: 8px 12px;
+  font-weight: 700;
+}
+
+/* Emoji strip */
+.emo-ico{
+  width: 36px; height: 36px; object-fit: contain;
+  opacity: .95;
+  transition: transform .15s ease;
+}
+.emo-ico:hover{ transform: translateY(-2px) scale(1.04); }
+
+/* Small niceties */
+footer{ opacity: .7; }
