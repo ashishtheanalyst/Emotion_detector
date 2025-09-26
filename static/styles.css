@@ -3,70 +3,76 @@
   --gradient: linear-gradient(90deg, #6dd5ed, #2193b0);
 }
 
+/* General */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg);
-  color: #fff;
+  background: #f6f7fb;
+  color: #111827;
   margin: 0;
-  padding: 0;
 }
 
+.card { border-radius: 16px; }
+.shadow-soft { box-shadow: 0 12px 40px rgba(17,24,39,.08); }
+
 /* Hero */
-.hero {
+.hero{
   position: relative;
   min-height: 60vh;
   background: url('/static/img/hero-bg.jpg') center/cover no-repeat, var(--bg);
   color: #fff;
   display: flex;
-  align-items: flex-end;  /* push content lower */
-  padding-bottom: 80px;   /* add breathing space */
+  align-items: flex-end;
+  padding-bottom: 80px;
 }
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55); /* overlay for readability */
-}
-.gradient-text {
+.hero-overlay{ position:absolute; inset:0; background: rgba(0,0,0,.55); }
+.gradient-text{
   background: var(--gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.card {
-  background: #111827;
-  color: #e5e7eb;
+/* Inputs */
+textarea.form-control{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  color:#111;
+  border-radius:12px;
+}
+textarea.form-control:focus{
+  box-shadow:0 0 0 2px #2563eb33;
+  border-color:#2563eb66;
+}
+.btn-primary{
+  background-image: var(--gradient);
+  border: none;
   border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(33,147,176,.25);
 }
-.card-body h2 {
-  color: #fff;
+.btn-primary:hover{ filter:brightness(1.03); }
+
+/* 🔵 Colored result box (this replaces the dark/black box) */
+.result-box{
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid #90caf9;
+  background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+  color: #0b3a69;
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: pre-wrap;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
-textarea.form-control {
-  background: #1f2937;
-  border: none;
-  color: #fff;
-  resize: none;
+.result-box.updated{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(137,207,240,.25);
 }
-textarea.form-control:focus {
-  background: #1f2937;
-  color: #fff;
-  box-shadow: 0 0 0 2px #2563eb;
-}
-.btn-primary {
-  background: var(--gradient);
-  border: none;
-}
-.result-box {
-  background: #1f2937;
-  min-height: 120px;
-  font-size: 0.95rem;
-}
-.placeholder-text {
-  color: #9ca3af;
-}
-.bg-emo {
-  background: var(--gradient);
-  color: #fff;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-}
+.placeholder-text{ color:#486581; }
+
+/* Dominant emotion badge colors */
+.badge-emo{ font-size:1.1rem; padding:.6rem 1rem; border-radius:50px; color:#fff; }
+.badge-anger   { background:#ef4444; }
+.badge-joy     { background:#facc15; color:#111; }
+.badge-sadness { background:#3b82f6; }
+.badge-fear    { background:#8b5cf6; }
+.badge-disgust { background:#22c55e; }
